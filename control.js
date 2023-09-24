@@ -27,7 +27,7 @@ console.info(m);
 
 var hasGP = false;
 var repGP;
-var ip =m
+var ip =localhost
 var cam1_node ="/camera/color/image_raw"
 var cam2_node ="/cv_camera/image_raw"
 var cam3_node ="/image_view/output"
