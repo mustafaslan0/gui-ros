@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <script type="text/javascript" src="roslib.js"></script>
+    <script type="text/javascript" src="control.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="nipple.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bat.css">
+    <link rel="stylesheet" href="css/mini1.css">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Redgiant</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    
+</head>
+<body>
+
+
+
+
+  <div class="popup-container">
+    
+    <div class="popup">
+        <div class="containerp inner">
+            <div class='containerp__svgs'>
+              <img src="rover.png" style="-webkit-filter: drop-shadow(5px 5px 5px #222);
+              filter: drop-shadow(5px 5px 5px #2b2a2a);" alt="">
+     
+              
+            </div>
+            <div class='containerp__content'>
+              
+              
+              <form class='containerp__form'>
+                <select id="gorev" class="containerp__inputField w3-animate-top" style="padding: 25px 0 5px 5px;"  name="gorev">
+                  <option value="sec">GÖREV SEÇ</option>
+                  <option value="teknofest">teknofest</option>
+                  <option value="navigation">navigation</option>
+                  <option value="roboticArm">robotic arm</option>
+                  <option value="science">science</option>
+                </select>
+                
+                <input type='text' name='ip' placeholder='Rover' class='containerp__inputField'>
+                <input type='password' name='password' placeholder='Password' class='containerp__inputField'>             
+            <ul>
+                <li>
+                  <input type="checkbox" id="myCheckbox1" />
+                  <label for="myCheckbox1"><img src="science_icon.png" /></label>
+                </li>
+                <li>                
+                  <input type="checkbox" id="myCheckbox2" />
+                  <label for="myCheckbox2"><img src="robot-arm.png" /></label>
+                </li>            
+              </ul>           
+              <input type='submit'  value='BAGLAN' class='containerp__sumbitButton'>
+            </form>           
+          </div>  
+    </div>
+    </div>
+    </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        <button type="button" class="burger" onclick="toggleSidebar()"></button>
+        <img class="logo" src="assets/logo.png" />
+        <aside class="sidebar">
+      <header class="sidebar-header"></header>
+      <nav>
+        <button type="button">
+          <img id="status" src="./assets/rover.svg" />
+          <span >connection</span>
+        </button>
+        <button type="button">
+          <img id="gamepadStatus" src="gamepad.png" />
+          <span id="gamepadStatust">GamePad connection</span>
+        </button>
+      </nav>
+      
+      <nav>
+        <button type="button">
+          <div class="battery" id="batteryt" title="???"  >
+            <div class="battery-level" id="bat" style="height: 50%;"></div>
+          </div>
+          <span class="batteryts">Batarya</span>
+        </button>
+        <button type="button" id="autocam">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span>Auto Camera switcher</span>
+      </button>
+      </nav>
+      <nav>
+        <button type="button" onclick="send('close')">
+            <img src="./assets/close.svg">
+            <span>Arm Close</span>
+        </button>
+        <button type="button" onclick="send('open')">
+            <img src="./assets/open_g.svg">
+            <SPan>Arm Open</SPan>
+        </button>
+        <button type="button" id="auto" onclick="send('autonomy')">
+            <img src="./assets/autonomy.svg" >
+            <span>Autonomy Mode</span>
+        </button>
+      
+      </nav>
+      <nav>
+        <button type="button" onclick="send('rover_description,rover.launch')">
+            <img src="./assets/start.svg">
+            <span>Start/Stop</span>
+        </button>
+        <button type="button" onclick="send('rover_description,start.launch')">
+            <img src="./assets/settings.svg">
+            <SPan>Settings</SPan>
+        </button>
+      
+      
+      </nav>
+      <nav>
+        
+
+      </nav>
+
+
+
+
+      
+      
+      
+      
+    </aside> 
+    
+    <div class="row w3-animate-right" align="right" >
+      <div class="column">
+        <img class="cam1s" src="1.png" alt="camera1" id="cam1" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="2.png" alt="camera2" id="cam2" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="3.png" alt="camera3" id="cam3" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+          <img src="4.png" alt="camera4" id="cam4" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="assets/cam/map.png" alt="camera5" id="map" onclick="myFunction(this);">
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="box " > 
+      <div class="boxin"style="background-color: rgb(255, 255, 255); right: 5%; padding: 100px;">
+        <h4 style="height: 15px; position: fixed; top: 71%; right: 25%; color: aliceblue;">Drive System</h4>
+      </div>
+    </div>
+    <div class="box" style="right: 35%;">  
+      <div class="boxin"style="background-color: rgb(255, 255, 255); right: 35%; padding: 100px;">
+        <h4 style="height: 15px; position: fixed; top: 71%; right: 55%; color: aliceblue;">Arm System</h4>
+        
+        <ul class="w3-ui w3-border-left">
+          <li class="otnomdurum" style="position: fixed; top: 77%; left: 40%; "for="5px">eksen-1 =</li>
+          <li class="otonomMode"style="position: fixed; top: 80%; left: 40%; "for="5px">eksen-2 =</li>
+          <li class="otonomKonum"style="position: fixed; top: 83%; left: 40%;"for="5px">eksen-3 =</li>
+          <li class="otonompoint"style="position: fixed; top: 86%; left: 40%;"for="5px">eksen-4 =</li>
+          <li class="otonompoint"style="position: fixed; top: 89%; left: 40%;"for="5px">eksen-5 =</li>
+          <li class="otonompoint"style="position: fixed; top: 92%; left: 40%;"for="5px">eksen-6 =</li>
+        </ul>
+        
+        <button type="button" id="armxyz" style="position: fixed; right: 42.5%; top: 80%;">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </button>
+        
+        <div id="zone_joystick" style="margin: 30px; position: fixed; right: 40%;" ></div>
+        <div id="zone_joystick2" style="margin: 30px; position: fixed; right: 45%;" ></div>
+        
+      </div>
+      
+    </div>
+    <div class="box" style="right: 65%;">  
+      <div class="boxin "style="background-color: rgb(255, 255, 255); right: 65%; padding: 100px; ">
+        <h4 class="w3-animate-bottom"style="height: 15px; position: fixed; top: 71%; right: 83%; color: rgb(255, 255, 255); ">Otonomy System</h4>
+        <ul class="w3-ui w3-border-left">
+          <li class="otnomdurum" style="position: fixed; top: 77%; left: 10%; "for="5px">durum =</li>
+          <li class="otonomMode"style="position: fixed; top: 80%; left: 10%; "for="5px">mode =</li>
+          <li class="otonomKonum"style="position: fixed; top: 83%; left: 10%;"for="5px">konum =</li>
+          <li class="otonompoint"style="position: fixed; top: 86%; left: 10%;"for="5px">görev =</li>
+          
+          
+          <li class="otonompoint"style="position: fixed; top: 77%; left: 20%;"for="5px">artag-1=</li>
+          <li class="otonompoint"style="position: fixed; top: 80%; left: 20%;"for="5px">artag-2=</li>
+          <li class="otonompoint"style="position: fixed; top: 83%; left: 20%;"for="5px">artag-3=</li>
+          <li class="otonompoint"style="position: fixed; top: 86%; left: 20%;"for="5px">artag-4=</li>
+          <li class="otonompoint"style="position: fixed; top: 89%; left: 20%;"for="5px">artag-5=</li>
+        </ul>
+        
+      </div>
+      
+    </div>
+    <div style="margin-left: 150px; margin-bottom: 100%; display: none; z-index: 10;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.695233593917!2d32.51652671558588!3d38.007568606504115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d085afae1f0edb%3A0xb9ff1dbaa5e290e6!2sKonya%20Teknik%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1675796736773!5m2!1str!2str" width="800" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </body>
+  </html>

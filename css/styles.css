@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #712424;
+  background-image: url(/assets/cam/1.png);
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: 90%; */
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:is(.sidebar, .burger, .logo) {
+  position: fixed;
+}
+
+.sidebar {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 100%;
+  background: #4c1414;
+  transition: 0.4s;
+}
+
+@media (width < 500px) {
+  .sidebar {
+    translate: -100% 0;
+  }
+
+  body.open .sidebar {
+    translate: 0 0;
+  }
+}
+
+.sidebar-header {
+  display: grid;
+  place-items: center;
+  height: 72px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  z-index: 2;
+  top: 18px;
+  left: 52px;
+  width: 38px;
+  scale: 0.8;
+  transition: 0.4s;
+}
+
+@media (width <= 500px) {
+  body.open > .logo {
+    translate: 28px;
+  }
+}
+
+@media (width >= 500px) {
+  .logo {
+    left: 15px;
+    width: 42px;
+  }
+}
+
+.burger {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  background: url(../assets/icon-burger.svg) no-repeat center;
+}
+
+body.open .burger {
+  background: url(../assets/icon-close.svg) no-repeat center;
+}
+
+@media (width >= 500px) {
+  .burger {
+    display: none;
+  }
+}
+
+.sidebar > nav {
+  display: grid;
+}
+
+.sidebar > nav:not(:last-child) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #601e1e;
+  margin-bottom: 1rem;
+}
+
+.sidebar > nav > button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0;
+}
+
+@media (width >= 500px) {
+  .sidebar > nav > button:hover > span {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.sidebar > nav > button > img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar > nav > button > span {
+  position: absolute;
+  top: 50%;
+  left: 120%;
+  translate: 0 -50%;
+  padding: 10px;
+  border-radius: 4px;
+  color: #f9f9f9;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  line-height: 1;
+  transition: 0.4s;
+}
+
+.column {
+  /* position:fixed; */
+  display: table;
+  
+
+/* background-color: #0C2A37; */
+z-index: 500;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.9;
+  width: 150px;
+  border-radius: 15px;
+
+  transition: transform .4s;
+  
+
+}
+
+.column img:hover { 
+  opacity: 0.6;
+
+  /* transform: scale(1.1); */
+  
+
+
+}
+
+
+.row{
+
+margin-top: 250px;
+
+transition: transform .1s;
+
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  right: 10%;
+}
+
+
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+z-index: 500;
+
+
+  position: absolute;
+  margin-top: 0%;
+margin-left: 180px;
+margin-right: 5px;
+width: 31%;
+}
+
+
+
+
+
+.statusid{
+  position: absolute;
+  right: 0px;
+  width: 145px;
+  bottom: 0px;
+  padding: 10px;
+}
+.gamepad{
+  position: absolute;
+  right: 0px;
+  width: 80px;
+  bottom: 0px;
+  padding: 10px;
+}
+
+
+
+
+
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+.alertcon {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  
+}
+
+.closebtncon {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtncon:hover {
+  color: black;
+}
+
+ /* The switch - the box around the slider */
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #c90c0c;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+.box {
+  background-color:#4c1414;
+  /* background-image: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%); */
+  
+  width: 500px;
+  border: 15px;
+  padding: 120px;
+  margin: 20px;
+  border-radius: 10px;
+  position: fixed;
+  right: 5%;
+  resize: none;
+  bottom: 0%;
+}
+.boxin {
+  background-color:#781D42;
+  /* mix-blend-mode: soft-light; */
+  width: 500px;
+  border: 15px;
+  padding: 120px;
+  margin: 20px;
+  border-radius: 10px;
+  position: fixed;
+  right: 5%;
+  resize: none;
+  bottom: 0%;
+  
+}

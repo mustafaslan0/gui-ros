@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover login page</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/w3.css">
+
+    <style>
+
+
+/* Global Variables */
+:root {
+    --color1: #3b3b3b;
+    --color2: rgb(34, 34, 34);
+    --color2Hover: #594141;
+    --color3: #fff;
+}
+
+/* Reset Default Settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: var(--color1);
+    background: linear-gradient(142deg, #d70027, #7300a5);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+
+    /* Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerp {
+    background-color: var(--color3);
+    width: 700px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    /* Flex */
+    display: flex;
+}
+
+.containerp__svgs {
+    background-color: var(--color2);
+    width: 50%;
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerp__svg1 {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.containerp__svg2 {
+    width: 170px;
+    height: 18px;
+}
+
+.containerp__content {
+    width: 50%;
+    position: relative;
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.containerp__form {
+    margin-bottom: 20px;
+    
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.containerp__inputField {
+    background-color: transparent;
+    width: 220px;
+    padding: 0 0 5px 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    /* Border */
+    border: none;
+    border-bottom: solid 1px var(--color2);
+    border-radius: 0;
+}
+
+.containerp__inputField:first-of-type {
+    margin-bottom: 30px;
+}
+
+.containerp__inputField:nth-of-type(2) {
+    margin-bottom: 32px;
+}
+
+.containerp__inputField:focus-visible {
+    border-bottom: solid 2px var(--color2Hover);
+    outline: none;
+}
+
+.containerp__sumbitButton {
+    background-color: var(--color2);
+    color: var(--color3);
+    width: 220px;
+    padding: 15px 0;
+    font-size: 14px;
+    cursor: pointer;
+
+    /* Text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    /* Border */
+    border: none;
+    border-radius: 50px;
+}
+
+.containerp__sumbitButton:hover {
+    background-color: var(--color2Hover);
+}
+
+.containerp__links {
+    /* Position */
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+
+    /* Flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerp__link {
+    color: var(--color2);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.containerp__link:hover {
+    text-decoration: underline;
+}
+
+.containerp__separator {
+    background-color: var(--color2);
+    width: 1px;
+    height: 10px;
+    margin: 0 15px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="myCheckbox"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 32px;
+  width: 32px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+}
+
+:checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(0.5);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  /* box-shadow: 0 0 5px #333; */
+  z-index: -1;
+}
+
+    </style>
+</head>
+<body>
+    <div class='containerp'>
+        <div class='containerp__svgs'>
+            <img src="rover.png" alt="">
+         
+      
+        </div>
+        <div class='containerp__content'>
+         
+              
+              <form class='containerp__form'>
+                <select id="gorev" class="containerp__inputField"  name="gorev">
+                    <option value="sec">GÖREV SEÇ</option>
+                    <option value="teknofest">teknofest</option>
+                    <option value="navigation">navigation</option>
+                    <option value="roboticArm">robotic arm</option>
+                    <option value="science">science</option>
+                  </select>
+                <input type='text' name='Roverİp' placeholder='Rover İp' class='containerp__inputField'>
+                <input type='password' name='password' placeholder='Password' class='containerp__inputField'>
+
+                <ul>
+                    <li>
+                        <input type="checkbox" id="myCheckbox1" />
+                        <label for="myCheckbox1"><img src="science_icon.png" /></label>
+                      </li>
+                      <li>
+            
+                          <input type="checkbox" id="myCheckbox2" />
+                          <label for="myCheckbox2"><img src="robot-arm.png" /></label>
+                      </li>
+                      <li>
+            
+                        <input type="checkbox" id="myCheckbox3" />
+                        <label for="myCheckbox3"><img src="robot-arm.png" /></label>
+                    </li>
+                    
+  
+                  </ul>
+                  
+
+
+                <input type='submit'  value='BAGLAN' class='containerp__sumbitButton'>
+            </form>
+              
+              
+
+                
+                
+                
+                
+                
+                <!-- <div class='containerp__links'>
+                    <a href='rover.html?ip=192.168.1.102' class='containerp__link'>Need Account?</a>
+                    <span class='containerp__separator'></span>
+                    <a href='#emptyLink' class='containerp__link'>Register</a>
+                </div> -->
+                
+        </div>
+      </div>
+
+
+      <script>
+     
+        </script>
+</body>
+</html>
